@@ -1,5 +1,6 @@
 ﻿namespace Footballgram.Data.Models
 {
+    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using static ValidationConstants;
     public class Post
@@ -12,5 +13,7 @@
         public string ImageUrl { get; set; }
         public string UserId { get; set; }
         public User User { get; set; }
+
+        public IEnumerable<Comment> Commnets { get; } = new HashSet<Comment>();
     }
 }

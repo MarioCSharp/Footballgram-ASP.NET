@@ -14,6 +14,7 @@
                 options.Password.RequireUppercase = false;
                 options.Password.RequireDigit = false;
                 options.Password.RequiredLength = 3;
+                options.Password.RequireNonAlphanumeric = false;
             }).AddEntityFrameworkStores<FootballgramDbContext>();
 
             return services;

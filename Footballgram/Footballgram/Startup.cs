@@ -2,6 +2,8 @@ namespace Footballgram
 {
     using Footballgram.Data;
     using Footballgram.Infrastructure;
+    using Footballgram.Services.Post;
+    using Footballgram.Services.User;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.EntityFrameworkCore;
@@ -26,6 +28,9 @@ namespace Footballgram
                 .AddControllersWithViews();
 
             services.AddRazorPages();
+
+            services.AddTransient<IUserService, UserService>();
+            services.AddTransient<IPostService, PostService>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
